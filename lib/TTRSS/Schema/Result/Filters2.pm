@@ -27,28 +27,28 @@ __PACKAGE__->add_columns(
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 250 },
 );
 __PACKAGE__->set_primary_key("id");
+__PACKAGE__->has_many(
+  "filters2_actions",
+  "TTRSS::Schema::Result::Filters2Action",
+  { "foreign.filter_id" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+__PACKAGE__->has_many(
+  "filters2_rules",
+  "TTRSS::Schema::Result::Filters2Rule",
+  { "foreign.filter_id" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
 __PACKAGE__->belongs_to(
   "owner_uid",
   "TTRSS::Schema::Result::User",
   { id => "owner_uid" },
   { is_deferrable => 1, on_delete => "CASCADE", on_update => "RESTRICT" },
 );
-__PACKAGE__->has_many(
-  "ttrss_filters2_actions",
-  "TTRSS::Schema::Result::Filters2Action",
-  { "foreign.filter_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "ttrss_filters2_rules",
-  "TTRSS::Schema::Result::Filters2Rule",
-  { "foreign.filter_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:v7i60CWKzZp2GTaZSL9c4g
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:1gV7gD+81CC3vcxeCrsiOg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

@@ -27,6 +27,30 @@ __PACKAGE__->add_columns(
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 250 },
 );
 __PACKAGE__->set_primary_key("id");
+__PACKAGE__->has_many(
+  "feed_categories",
+  "TTRSS::Schema::Result::FeedCategory",
+  { "foreign.parent_cat" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+__PACKAGE__->has_many(
+  "feeds",
+  "TTRSS::Schema::Result::Feed",
+  { "foreign.cat_id" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+__PACKAGE__->has_many(
+  "filters",
+  "TTRSS::Schema::Result::Filter",
+  { "foreign.cat_id" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+__PACKAGE__->has_many(
+  "filters2_rules",
+  "TTRSS::Schema::Result::Filters2Rule",
+  { "foreign.cat_id" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
 __PACKAGE__->belongs_to(
   "owner_uid",
   "TTRSS::Schema::Result::User",
@@ -44,34 +68,10 @@ __PACKAGE__->belongs_to(
     on_update     => "RESTRICT",
   },
 );
-__PACKAGE__->has_many(
-  "ttrss_feed_categories",
-  "TTRSS::Schema::Result::FeedCategory",
-  { "foreign.parent_cat" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "ttrss_feeds",
-  "TTRSS::Schema::Result::Feed",
-  { "foreign.cat_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "ttrss_filters",
-  "TTRSS::Schema::Result::Filter",
-  { "foreign.cat_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "ttrss_filters2_rules",
-  "TTRSS::Schema::Result::Filters2Rule",
-  { "foreign.cat_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:b5mHMoua3c3/ncglRJNnjA
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:WOb+MvAsiMbS2THpSHgCqw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

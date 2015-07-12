@@ -113,6 +113,24 @@ __PACKAGE__->belongs_to(
     on_update     => "RESTRICT",
   },
 );
+__PACKAGE__->has_many(
+  "feeds",
+  "TTRSS::Schema::Result::Feed",
+  { "foreign.parent_feed" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+__PACKAGE__->has_many(
+  "filters",
+  "TTRSS::Schema::Result::Filter",
+  { "foreign.feed_id" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+__PACKAGE__->has_many(
+  "filters2_rules",
+  "TTRSS::Schema::Result::Filters2Rule",
+  { "foreign.feed_id" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
 __PACKAGE__->belongs_to(
   "owner_uid",
   "TTRSS::Schema::Result::User",
@@ -131,33 +149,15 @@ __PACKAGE__->belongs_to(
   },
 );
 __PACKAGE__->has_many(
-  "ttrss_feeds",
-  "TTRSS::Schema::Result::Feed",
-  { "foreign.parent_feed" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "ttrss_filters",
-  "TTRSS::Schema::Result::Filter",
-  { "foreign.feed_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "ttrss_filters2_rules",
-  "TTRSS::Schema::Result::Filters2Rule",
-  { "foreign.feed_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "ttrss_user_entries",
+  "user_entries",
   "TTRSS::Schema::Result::UserEntry",
   { "foreign.feed_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:S93FeVF4DvEl/CVCYFVsjQ
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:SQ92qKopd8jI1RctHTxZTw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

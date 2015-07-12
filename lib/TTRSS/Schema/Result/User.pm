@@ -60,105 +60,105 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("login", ["login"]);
 __PACKAGE__->has_many(
-  "ttrss_access_keys",
+  "access_keys",
   "TTRSS::Schema::Result::AccessKey",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_archiveds_feeds",
+  "archiveds_feeds",
   "TTRSS::Schema::Result::ArchivedFeeds",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_cat_counters_caches",
+  "cat_counters_caches",
   "TTRSS::Schema::Result::CatCountersCache",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_counters_caches",
+  "counters_caches",
   "TTRSS::Schema::Result::CountersCache",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_entry_comments",
+  "entry_comments",
   "TTRSS::Schema::Result::EntryComment",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_error_logs",
+  "error_logs",
   "TTRSS::Schema::Result::ErrorLog",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_feed_categories",
+  "feed_categories",
   "TTRSS::Schema::Result::FeedCategory",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_feeds",
+  "feeds",
   "TTRSS::Schema::Result::Feed",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_filters",
+  "filters",
   "TTRSS::Schema::Result::Filter",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_filters2s",
+  "filters2s",
   "TTRSS::Schema::Result::Filters2",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_labels2s",
+  "labels2s",
   "TTRSS::Schema::Result::Labels2",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_plugin_storages",
+  "plugin_storages",
   "TTRSS::Schema::Result::PluginStorage",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_settings_profiles",
+  "settings_profiles",
   "TTRSS::Schema::Result::SettingsProfile",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_tags",
+  "tags",
   "TTRSS::Schema::Result::Tag",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_user_entries",
+  "user_entries",
   "TTRSS::Schema::Result::UserEntry",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_user_prefs",
+  "user_prefs",
   "TTRSS::Schema::Result::UserPref",
   { "foreign.owner_uid" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:vl/dJoS1m72c0CNYMjVW7Q
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:wrmdS/vaX+QoOpjouPxbYw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

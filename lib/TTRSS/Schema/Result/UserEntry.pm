@@ -95,14 +95,14 @@ __PACKAGE__->belongs_to(
   { is_deferrable => 1, on_delete => "CASCADE", on_update => "RESTRICT" },
 );
 __PACKAGE__->has_many(
-  "ttrss_tags",
+  "tags",
   "TTRSS::Schema::Result::Tag",
   { "foreign.post_int_id" => "self.int_id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:+8M3kw1zqVqiQOHT7+QiyA
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:zzFOCSB+IZndKrGSefd2Kg
 
 1;

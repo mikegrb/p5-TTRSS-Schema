@@ -22,21 +22,21 @@ __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("description", ["description"]);
 __PACKAGE__->add_unique_constraint("name", ["name"]);
 __PACKAGE__->has_many(
-  "ttrss_filters",
+  "filters",
   "TTRSS::Schema::Result::Filter",
   { "foreign.filter_type" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_filters2_rules",
+  "filters2_rules",
   "TTRSS::Schema::Result::Filters2Rule",
   { "foreign.filter_type" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:B+vt71ac8Z/yBYXZ+lYWPg
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:t1cA1OjcmQDwVNKe3WGjFg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

@@ -26,15 +26,15 @@ __PACKAGE__->belongs_to(
   { is_deferrable => 1, on_delete => "CASCADE", on_update => "RESTRICT" },
 );
 __PACKAGE__->has_many(
-  "ttrss_user_prefs",
+  "user_prefs",
   "TTRSS::Schema::Result::UserPref",
   { "foreign.profile" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:xjmkRXR0kesI6xBqKPifUw
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:QXVXHgZy3GcPZEx4JU+Plg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

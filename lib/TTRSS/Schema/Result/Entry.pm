@@ -62,33 +62,33 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("guid", ["guid"]);
 __PACKAGE__->has_many(
-  "ttrss_enclosures",
+  "enclosures",
   "TTRSS::Schema::Result::Enclosure",
   { "foreign.post_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_entry_comments",
+  "entry_comments",
   "TTRSS::Schema::Result::EntryComment",
   { "foreign.ref_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_user_entries",
+  "user_entries",
   "TTRSS::Schema::Result::UserEntry",
   { "foreign.ref_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 __PACKAGE__->has_many(
-  "ttrss_user_labels2s",
+  "user_labels2s",
   "TTRSS::Schema::Result::UserLabels2",
   { "foreign.article_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:RR8eqejROPue1WXfS7iBsA
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:xNAgIrq8ZxhKBdyIS8kiYw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
