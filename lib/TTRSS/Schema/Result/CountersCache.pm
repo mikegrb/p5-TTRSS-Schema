@@ -22,6 +22,7 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 0,
+    timezone => "UTC",
   },
 );
 __PACKAGE__->belongs_to(
@@ -32,8 +33,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:YxR1AZoWaMRa8LqIAlcNxg
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Th9r5gLkATacact9HKvoFg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

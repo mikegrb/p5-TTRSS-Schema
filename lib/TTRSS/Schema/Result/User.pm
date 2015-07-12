@@ -22,6 +22,7 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 1,
+    timezone => "UTC",
   },
   "access_level",
   { data_type => "integer", default_value => 0, is_nullable => 0 },
@@ -38,6 +39,7 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 1,
+    timezone => "UTC",
   },
   "salt",
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 250 },
@@ -46,6 +48,7 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 1,
+    timezone => "UTC",
   },
   "twitter_oauth",
   { data_type => "longtext", is_nullable => 1 },
@@ -154,8 +157,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:5v10FeQ7UeGGoTSF4DyOOQ
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:vl/dJoS1m72c0CNYMjVW7Q
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

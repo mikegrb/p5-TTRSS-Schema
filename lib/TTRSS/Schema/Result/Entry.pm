@@ -24,6 +24,7 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 0,
+    timezone => "UTC",
   },
   "content",
   { data_type => "longtext", is_nullable => 0 },
@@ -38,12 +39,14 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 0,
+    timezone => "UTC",
   },
   "date_updated",
   {
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 0,
+    timezone => "UTC",
   },
   "num_comments",
   { data_type => "integer", default_value => 0, is_nullable => 0 },
@@ -84,8 +87,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:T/F5Eueelr2Q6D05Fox90A
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:RR8eqejROPue1WXfS7iBsA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

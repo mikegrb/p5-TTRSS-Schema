@@ -33,6 +33,7 @@ __PACKAGE__->add_columns(
     datetime_undef_if_invalid => 1,
     default_value => "0000-00-00 00:00:00",
     is_nullable => 1,
+    timezone => "UTC",
   },
   "last_error",
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 250 },
@@ -63,12 +64,14 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 1,
+    timezone => "UTC",
   },
   "last_update_started",
   {
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 1,
+    timezone => "UTC",
   },
   "always_display_enclosures",
   { data_type => "tinyint", default_value => 0, is_nullable => 0 },
@@ -89,6 +92,7 @@ __PACKAGE__->add_columns(
     data_type => "datetime",
     datetime_undef_if_invalid => 1,
     is_nullable => 1,
+    timezone => "UTC",
   },
   "hide_images",
   { data_type => "tinyint", default_value => 0, is_nullable => 0 },
@@ -152,8 +156,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:14:29
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:glYmkcG7KjpggmMMyXhkYw
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 00:43:23
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:S93FeVF4DvEl/CVCYFVsjQ
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
