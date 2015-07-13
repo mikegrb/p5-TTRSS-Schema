@@ -58,6 +58,8 @@ __PACKAGE__->add_columns(
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 250 },
   "lang",
   { data_type => "varchar", is_nullable => 1, size => 2 },
+  "redirected_link",
+  { data_type => "text", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("guid", ["guid"]);
@@ -87,8 +89,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:xNAgIrq8ZxhKBdyIS8kiYw
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:55:34
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:+Fq7jjMigaTf+IRZ4LAT6g
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
