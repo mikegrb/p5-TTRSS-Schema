@@ -105,4 +105,14 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-07-12 01:30:27
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:zzFOCSB+IZndKrGSefd2Kg
 
+use DateTime;
+
+sub mark_read {
+  my ($self, $date) = @_;
+  $self->last_read( $date // DateTime->now );
+  $self->unread(0);
+  $self->update;
+  $self->discard_changes;
+}
+
 1;
